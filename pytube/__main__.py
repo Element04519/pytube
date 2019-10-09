@@ -119,7 +119,7 @@ class YouTube(object):
 
             # Fix for KeyError: 'title' issue #434
             if 'title' not in self.player_config_args:
-                try:
+            	try:
             		from bs4 import BeautifulSoup
             		soup = BeautifulSoup(self.watch_html, 'lxml')
             		title = soup.title.get_text().strip()
@@ -335,3 +335,4 @@ class YouTube(object):
 
         """
         self.stream_monostate['on_complete'] = func
+
